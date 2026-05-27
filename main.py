@@ -1,10 +1,11 @@
+#SUDOKU GAME 
 import random
 from copy import deepcopy
 
 class SudokuGame:
     def __init__(self, difficulty='medium'):
         """
-        Initialize Sudoku game with specified difficulty.
+         Initialize Sudoku game with specified difficulty.
         difficulty: 'easy' (35-40 empty), 'medium' (45-50 empty), 'hard' (55-60 empty)
         """
         self.difficulty = difficulty
@@ -12,6 +13,14 @@ class SudokuGame:
         self.solution = [[0] * 9 for _ in range(9)]
         self.original_board = [[0] * 9 for _ in range(9)]
         self.generate_board()
+
+    def do_nothing(self):
+        """A placeholder method that does nothing. """
+        pass
+
+    def do_nothing2(self): 
+        """A second placeholder method that also does nothing."""
+        pass
         
     def generate_board(self):
         """Generate a new Sudoku board."""
@@ -40,7 +49,7 @@ class SudokuGame:
                 self.board[row_box * 3 + i][col_box * 3 + j] = nums[i * 3 + j]
     
     def is_valid(self, board, row, col, num):
-        """Check if placing num at board[row][col] is valid."""
+        """Check if placing num at board[row][col] is valid. """
         # Check row
         if num in board[row]:
             return False
